@@ -1,0 +1,82 @@
+<?php $this->load->view('layouts/header'); ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>T-Shirt Category - PrintLex</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .btn-gradient {
+      background: linear-gradient(90deg, #7c3aed, #9333ea);
+      color: white;
+      transition: opacity 0.3s ease;
+    }
+    .btn-gradient:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body class="bg-white relative">
+
+  <!-- Header -->
+  <section class="text-center py-10">
+    <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900">Premium T-Shirts</h1>
+    <p class="mt-3 text-gray-600 max-w-2xl mx-auto">
+      Discover our curated collection of high-quality print-on-demand t-shirts. 
+      Each design is carefully crafted for comfort and style.
+    </p>
+  </section>
+
+  <!-- Go Back Home Button (upper-left corner) -->
+  <!-- <div class="absolute top-24 left-6">
+    <a href="index.html" class="btn-gradient px-5 py-2 rounded-lg text-sm font-semibold shadow-md">
+      Go Back Home
+    </a>
+  </div> -->
+
+  <!-- Products Grid -->
+  <section class="container mx-auto px-6 pb-16 mt-10">
+    <!-- 4 columns -->
+    <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
+
+      <!-- Product Card -->
+
+ <?php if(!empty($tshirt)): ?>
+  <?php foreach($tshirt as $product): ?>
+    <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transform hover:scale-105 transition overflow-hidden">
+      <div class="relative">
+        <img src="<?= base_url('uploads/' . $product->image); ?>" alt="<?= $product->name ?>" class="w-full h-72 object-cover">
+        <span class="absolute top-3 left-3 bg-purple-100 text-purple-600 text-xs px-3 py-1 rounded-full"><?= $product->product_type ?></span>
+      </div>
+      <div class="p-5">
+        <h3 class="text-gray-900 font-semibold text-lg"><?= $product->name ?></h3>
+        <div class="mt-3 flex justify-between items-center">
+          <p class="text-purple-600 font-bold text-xl">₹<?= $product->price ?></p>
+          <button class="btn-gradient px-4 py-2 rounded-lg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  <?php endforeach; ?>
+<?php else: ?>
+  <p class="text-center text-gray-500 col-span-4">No T-Shirts Found</p>
+<?php endif; ?>
+
+
+
+    </div>
+  </section>
+<script>
+    function showCategories() {
+    const section = document.getElementById("categoriesSection");
+    section.style.display = "block";
+    section.scrollIntoView({ behavior: "smooth" }); // auto scroll to it
+  }
+          function showContactUs() {
+    const section = document.getElementById("ContactUsSection");
+    section.style.display = "block";
+    section.scrollIntoView({ behavior: "smooth" }); // auto scroll to it
+  }
+</script>
+</body>
+</html>

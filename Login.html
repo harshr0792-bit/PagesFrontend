@@ -1,0 +1,452 @@
+<?php $this->load->view('layouts/header'); ?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Section - PrintLex</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gradient-to-r from-purple-500 to-purple-400 min-h-screen flex items-center justify-center">
+    <!-- Hero Section -->
+    <section class="container mx-auto px-6 py-12" style="background: linear-gradient(135deg, #8D5BE2, #6C4EE5, #AE68E0);">
+  <div class="grid md:grid-cols-2 gap-10 items-center">
+    <!-- Left Content -->
+    <div class="text-white">
+      <!-- Tagline -->
+      <!-- <div class="inline-flex items-center bg-white/20 text-white text-sm font-medium px-3 py-1 rounded-full mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3" />
+        </svg>
+        Custom Print Solutions
+      </div> -->
+      <!-- Heading -->
+      <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
+        Create Print Your Own <br> Ideas in Your Fingertips
+      </h1>
+      <!-- Subtext -->
+      <p class="text-white/80 mb-6">
+        Turn your creativity into reality with our premium print-on-demand service. 
+        Design, customize, and order with ease.
+      </p>
+      <!-- Buttons -->
+      <div class="flex flex-wrap gap-4 justify-center mt-6">
+  <a href="#" class="bg-white text-purple-600 font-medium px-5 py-3 rounded-lg shadow hover:bg-purple-100 transition">
+    Start Creating →
+  </a>
+  <a href="#" class="border border-white text-white px-5 py-3 rounded-lg hover:bg-white/10 transition">
+    Browse Products
+  </a>
+</div>
+
+    </div>
+    <!-- Right Image -->
+    <div class="relative">
+      <!-- Your uploaded hero image -->
+      <img src="assets/back.jpg" alt="Hero Image" class="rounded-2xl shadow-lg">
+
+      <!-- Top Right Badge -->
+      <div class="absolute top-4 right-4 bg-white px-4 py-2 rounded-lg shadow text-right">
+        <span class="block text-purple-600 font-bold">Fast Delivery</span>
+        <span class="block text-gray-500 text-sm">7 business days</span>
+      </div>
+      <!-- Bottom Left Badge -->
+      <div class="absolute bottom-4 left-4 bg-white/70 px-4 py-2 rounded-lg shadow">
+        <span class="block text-purple-600 font-bold">High Quality</span>
+        <span class="block text-gray-700 text-sm">Premium materials</span>
+      </div>
+    </div>
+  </div>
+</section>
+    <div id="categoriesSection">
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #f9fafb;
+          margin: 0;
+          padding: 0;
+        }
+        section {
+          padding: 60px 20px;
+          max-width: 1200px;
+          margin: auto;
+          text-align: center;
+        }
+        section h2 {
+          font-size: 2rem;
+          font-weight: bold;
+          margin-bottom: 10px;
+          color: #111827;
+        }
+        section p {
+          color: #6b7280;
+          margin-bottom: 40px;
+        }
+        /* Category Grid */
+        .category-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 20px;
+        }
+        .category-card {
+          background: white;
+          border-radius: 15px;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+          overflow: hidden;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          cursor: pointer;
+        }
+        .category-card:hover {
+          transform: scale(1.05);
+          box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .category-card img {
+          width: 100%;
+          height: 180px;
+          object-fit: cover;
+        }
+        .category-content {
+          padding: 15px;
+        }
+        .category-content h3 {
+          font-size: 1.2rem;
+          font-weight: bold;
+          margin: 10px 0;
+        }
+        .category-content p {
+          color: #6b7280;
+          margin: 0;
+        }
+        .shop-btn {
+          display: inline-block;
+          margin-top: 10px;
+          padding: 10px 16px;
+          border: 2px solid #6d28d9;
+          border-radius: 8px;
+          color: #6d28d9;
+          font-weight: bold;
+          text-decoration: none;
+          transition: all 0.3s ease;
+        }
+        .shop-btn:hover {
+          background: #6d28d9;
+          color: white;
+        }
+        /* Popular Products Section */
+        .product-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 25px;
+          margin-top: 30px;
+        }
+        .product-card {
+          background: white;
+          border-radius: 15px;
+          box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+          overflow: hidden;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          cursor: pointer;
+          margin-bottom: 20px;
+          /* margin-bottom: 20px; */
+          padding: 18px 6px;
+        }
+        .product-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        .product-card img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+        }
+        .product-content {
+          padding: 15px;
+          text-align: left;
+        }
+        .product-tag {
+          background: #ede9fe;
+          color: #6d28d9;
+          font-size: 12px;
+          font-weight: bold;
+          padding: 2px 6px;
+          border-radius: 4px;
+          display: inline-block;
+          margin-bottom: 5px;
+        }
+        .product-title {
+          font-weight: bold;
+          font-size: 1rem;
+          margin: 5px 0;
+        }
+        .price {
+          color: #6d28d9;
+          font-weight: bold;
+          font-size: 1.2rem;
+          margin: 5px 0;
+        }
+        .add-btn {
+          display: inline-block;
+          background: #6d28d9;
+          color: white;
+          padding: 8px 14px;
+          border-radius: 8px;
+          text-decoration: none;
+          font-size: 0.9rem;
+          float: right;
+          margin-top: 7px;
+        }
+        .shop-all-btn {
+          display: inline-block;
+          margin-top: 30px;
+          padding: 12px 20px;
+          border-radius: 10px;
+          background: linear-gradient(90deg, #7c3aed, #9333ea);
+          color: white;
+          font-weight: bold;
+          text-decoration: none;
+          transition: opacity 0.3s ease;
+        }
+        .shop-all-btn:hover {
+          opacity: 0.9;
+        }
+      </style>
+      <section>
+        <h2>Shop by Category</h2>
+        <p>Explore our wide range of custom products by category.</p>
+        <div class="category-grid" id="categoryGrid"></div>
+      </section>
+      <section>
+        <h2>Popular Designs</h2>
+        <p>Discover our best-selling custom products loved by thousands of customers worldwide.</p>
+        <div class="product-grid" id="productGrid"></div>
+        <!-- <a href="#" class="shop-all-btn">Shop All Products</a> -->
+      </section>
+      </div>
+      <script>
+  function showCategories() {
+    const section = document.getElementById("categoriesSection");
+    section.style.display = "block";
+    section.scrollIntoView({ behavior: "smooth" }); // auto scroll to it
+  }
+
+  // Category Data
+  const categories = [
+    { name: "T-Shirts", image: "assets/Customize_T-shirt.jpg", products: 120 },
+    { name: "Mugs", image: "assets/Coustomize_cup.jpg", products: 85 },
+    { name: "Key Chain", image: "assets/Coustomize_Loket.jpg", products: 56 },
+    { name: "Mouse Pad", image: "assets/Digital_print.jpg", products: 72 },
+    { name: "Led Light", image: "assets/Digital_print.jpg", products: 72 },
+  ];
+  const categoryGrid = document.getElementById("categoryGrid");
+  categories.forEach(cat => {
+    const card = document.createElement("div");
+    card.className = "category-card";
+    card.innerHTML = `
+      <img src="${cat.image}" alt="${cat.name}">
+      <div class="category-content">
+        <h3>${cat.name}</h3>
+        <p>${cat.products} Products</p>
+        <a href="#" class="shop-btn">Shop Now</a>
+      </div>
+    `;
+    categoryGrid.appendChild(card);
+  });
+
+  // Product Data
+  const products = [
+  { tag: "T-Shirt", title: "Minimalist Design Hoodie", price: "$39.99", image: "assets/tshirt'.jpg", url: "<?= base_url('Tshirt'); ?>" },
+  { tag: "Mugs", title: "Custom Photo Pillow", price: "$22.99", image: "assets/Cup.jpg", url: "<?= base_url('Mugs'); ?>" },
+  { tag: "Key Chain", title: "Artistic Canvas Tote", price: "$18.99", image: "assets/Coustomize_Loket.jpg", url: "<?= base_url('Keychain'); ?>" },
+  { tag: "Mouse Pad", title: "Artistic Canvas Tote", price: "$19.99", image: "assets/Digital_print.jpg", url: "<?= base_url('MousePad'); ?>" },
+  { tag: "Led Light", title: "Artistic Canvas Tote", price: "$14.99", image: "assets/Digital_print.jpg", url: "<?= base_url('LedLight'); ?>" },
+];
+
+const productGrid = document.getElementById("productGrid");
+
+products.forEach(product => {
+  const card = document.createElement("div");
+  card.className = "product-card";
+  card.innerHTML = `
+    <img src="${product.image}" alt="${product.title}">
+    <div class="product-content">
+      <span class="product-tag">${product.tag}</span>
+      <div class="product-title">${product.title}</div>
+      
+    </div>
+  `;
+
+  // ✅ Redirect to product page when clicked
+  card.addEventListener("click", () => {
+    if (product.url && product.url !== "#") {
+      window.location.href = product.url;
+    }
+  });
+
+  productGrid.appendChild(card);
+});
+
+</script>
+
+      <style>
+        body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+          background-color: #111;
+          color: #ddd;
+        }
+        footer {
+          background-color: #1a1a1a;
+          padding: 40px 80px;
+        }
+        .footer-container {
+          display: grid;
+          grid-template-columns: 1.5fr 1fr 1fr 1fr;
+          gap: 40px;
+          border-bottom: 1px solid #333;
+          padding-bottom: 30px;
+        }
+        .footer-logo h2 {
+          color: #9b6bff;
+          font-size: 24px;
+          margin-bottom: 10px;
+        }
+        .footer-logo p {
+          font-size: 14px;
+          line-height: 1.6;
+          color: #aaa;
+          max-width: 300px;
+        }
+        .footer-column h4 {
+          font-size: 16px;
+          margin-bottom: 15px;
+          color: #fff;
+        }
+        .footer-column ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+        .footer-column ul li {
+          margin: 8px 0;
+        }
+        .footer-column ul li a {
+          color: #bbb;
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+        .footer-column ul li a:hover {
+          color: #9b6bff;
+        }
+        .social-icons {
+          margin-top: 20px;
+          display: flex;
+          gap: 15px;
+        }
+        .social-icons a {
+          color: #ccc;
+          font-size: 18px;
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+          color: #9b6bff;
+        }
+        .footer-bottom {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 20px;
+          font-size: 13px;
+          color: #888;
+        }
+        .footer-bottom a {
+          color: #888;
+          margin-left: 15px;
+          text-decoration: none;
+        }
+        .footer-bottom a:hover {
+          color: #9b6bff;
+        }
+        @media (max-width: 900px) {
+          .footer-container {
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+          }
+        }
+        @media (max-width: 600px) {
+          .footer-container {
+            grid-template-columns: 1fr;
+          }
+          .footer-bottom {
+            flex-direction: column;
+            gap: 10px;
+            text-align: center;
+          }
+        }
+      </style>
+      <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
+      <div id="ContactUsSection">
+      <footer>
+        <div class="footer-container">
+          <div class="footer-logo">
+            <h2>PrintLex</h2>
+            <p>Create amazing custom products with our print-on-demand service. Quality materials, fast shipping, and endless creative possibilities.</p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h4>Products</h4>
+            <ul>
+              <li><a href="#">T-Shirts</a></li>
+              <li><a href="#">Hoodies</a></li>
+              <li><a href="#">Mugs</a></li>
+              <li><a href="#">Phone Cases</a></li>
+              <li><a href="#">Home Decor</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Size Guide</a></li>
+              <li><a href="#">Shipping Info</a></li>
+              <li><a href="#">Returns</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Partners</a></li>
+              <li><a href="#">Affiliate Program</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2025 PrintLex. All rights reserved.</p>
+          <div>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookies</a>
+          </div>
+        </div>
+      </footer>
+      </div>
+      <script>
+        function showContactUs() {
+    const section = document.getElementById("ContactUsSection");
+    section.style.display = "block";
+    section.scrollIntoView({ behavior: "smooth" }); // auto scroll to it
+  }
+      </script>
+    </body>
+  </body>
+</html>

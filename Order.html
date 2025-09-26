@@ -1,0 +1,348 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Orders</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9fafb;
+      color: #1a1a1a;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    p.subtitle {
+      text-align: center;
+      color: #6b7280;
+      margin-bottom: 30px;
+      font-size: 1rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      padding: 20px;
+      overflow-x: auto;
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px; /* allows scroll on small screens */
+    }
+
+    th, td {
+      text-align: left;
+      padding: 15px 10px;
+    }
+
+    th {
+      color: #6b7280;
+      font-weight: 600;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    tr:not(:last-child) td {
+      border-bottom: 1px solid #f3f4f6;
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .item img {
+      width: 50px;
+      height: 50px;
+      border-radius: 6px;
+      object-fit: cover;
+      background: #f3f3f3;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    .delivered {
+      background: #0f172a;
+      color: #22c55e;
+    }
+
+    .pending {
+      background: #f1f5f9;
+      color: #eab308;
+    }
+
+    .shipped {
+      background: #f1f5f9;
+      color: #3b82f6;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+      .card h2 {
+        font-size: 1.25rem;
+      }
+      table {
+        font-size: 0.9rem;
+      }
+      .item img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        margin: 20px auto;
+        padding: 10px;
+      }
+      table {
+        font-size: 0.85rem;
+      }
+      .status {
+        padding: 4px 10px;
+        font-size: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>My Orders</h1>
+    <p class="subtitle">Track and manage your recent orders</p>
+
+    <div class="card">
+      <h2>Order History</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Total Bill</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#1001</td>
+            <td>
+              <div class="item">
+                <img src="https://via.placeholder.com/50x50.png?text=T-shirt" alt="T-shirt">
+                Blue T-shirt
+              </div>
+            </td>
+            <td>2</td>
+            <td>₹1200</td>
+            <td><span class="status delivered">Delivered</span></td>
+          </tr>
+          <tr>
+            <td>#1002</td>
+            <td>
+              <div class="item">
+                <img src="https://via.placeholder.com/50x50.png?text=Keychain" alt="Keychain">
+                Keychain
+              </div>
+            </td>
+            <td>1</td>
+            <td>₹250</td>
+            <td><span class="status pending">Pending</span></td>
+          </tr>
+          <tr>
+            <td>#1003</td>
+            <td>
+              <div class="item">
+                <img src="https://via.placeholder.com/50x50.png?text=Mug" alt="Mug">
+                Mug
+              </div>
+            </td>
+            <td>3</td>
+            <td>₹900</td>
+            <td><span class="status shipped">Shipped</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Orders</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9fafb;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 15px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 25px;
+    }
+
+    .order-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .order-status {
+      display: flex;
+      align-items: center;
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .order-status span {
+      font-weight: bold;
+      color: #16a34a; /* Green */
+    }
+
+    .delivery-date {
+      color: #6b7280;
+      font-size: 0.9rem;
+    }
+
+    .product-info {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      padding: 15px;
+      background: #f8fafc;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .product-info img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 6px;
+      background: #f3f3f3;
+    }
+
+    .product-details {
+      flex: 1;
+    }
+
+    .product-details h3 {
+      margin: 0 0 5px;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .product-details p {
+      margin: 3px 0;
+      font-size: 0.9rem;
+      color: #374151;
+    }
+
+    .exchange {
+      font-size: 0.85rem;
+      color: #6b7280;
+      margin-top: 8px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .product-info {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .product-info img {
+        width: 100%;
+        height: auto;
+        max-width: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>My Orders</h1>
+
+    <!-- Order Card 1 -->
+    <div class="order-card">
+      <div class="order-status">
+        <span>Delivered</span>
+        <span class="delivery-date">On Tue, 8 Apr</span>
+      </div>
+      <div class="product-info">
+        <img src="https://via.placeholder.com/80x80.png?text=Product" alt="Product">
+        <div class="product-details">
+          <h3>Minimalist</h3>
+          <p>10% Niacinamide Face Serum with Zinc - 30 ml</p>
+          <p>Size: 20-30 ML</p>
+        </div>
+      </div>
+      <p class="exchange">Exchange/Return window closed on Tue, 22 Apr</p>
+    </div>
+
+    <!-- Order Card 2 -->
+    <div class="order-card">
+      <div class="order-status">
+        <span>Delivered</span>
+        <span class="delivery-date">On Sat, 22 Feb 2025</span>
+      </div>
+      <div class="product-info">
+        <img src="https://via.placeholder.com/80x80.png?text=Product" alt="Product">
+        <div class="product-details">
+          <h3>Mamaearth</h3>
+          <p>Onion Shampoo - 600 ml</p>
+          <p>Size: 500-600 ML</p>
+        </div>
+      </div>
+      <p class="exchange">Exchange/Return window closed on Sat, 8 Mar 2025</p>
+    </div>
+  </div>
+</body>
+</html>
