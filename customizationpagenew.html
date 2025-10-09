@@ -59,27 +59,14 @@
       transform: translate(-50%, -50%);
       color: #444;
       font-weight: 700;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       text-align: center;
-      opacity: 0.7;
-    }
-
-    @media (max-width: 768px) {
-      .product-container {
-        flex-direction: column;
-        text-align: center;
-      }
-      .image-section {
-        margin-bottom: 2rem;
-      }
-      .btn-purple {
-        width: 100%;
-      }
+      opacity: 0.75;
     }
 
     .color-circle {
-      width: 30px;
-      height: 30px;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
       border: 2px solid #ddd;
       cursor: pointer;
@@ -89,37 +76,67 @@
       transform: scale(1.1);
       border-color: #6d28d9;
     }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .product-container {
+        flex-direction: column !important;
+        text-align: center !important;
+        align-items: center !important;
+      }
+      .image-section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .carousel {
+        width: 85% !important;
+      }
+      .tools {
+        justify-content: center;
+        width: 100%;
+      }
+      .btn-purple {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 
 <body class="bg-gray-50 font-sans">
 
   <div class="container py-5">
-    <div class="bg-white p-5 rounded-xl shadow-md flex flex-col md:flex-row items-start md:items-center justify-between gap-6 card-hover product-container">
+    <!-- Product Card -->
+    <div class="bg-white p-5 rounded-xl shadow-md flex flex-col md:flex-row items-center justify-between gap-8 card-hover product-container">
       
-      <!-- Left: Image Slider + Tools -->
+      <!-- Left: Carousel + Tools -->
       <div class="flex-1 flex flex-col items-center image-section">
-
-        <!-- Carousel -->
-        <div id="tshirtCarousel" class="carousel slide w-64 md:w-80" data-bs-ride="carousel">
+        <div id="tshirtCarousel" class="carousel slide w-72 md:w-80" data-bs-ride="carousel">
           <div class="carousel-inner rounded-lg shadow-sm">
             <div class="carousel-item active position-relative">
-              <img src="https://i.ibb.co/R2rQ7fL/red-tshirt.png" class="d-block w-100" alt="Red T-shirt">
+              <img src="https://i.ibb.co/R2rQ7fL/red-tshirt.png" class="d-block w-100" alt="Red T-shirt" />
               <div class="overlay-text">Your Design Here</div>
             </div>
             <div class="carousel-item position-relative">
-              <img src="https://i.ibb.co/jDLZKZQ/blue-tshirt.png" class="d-block w-100" alt="Blue T-shirt">
+              <img src="https://i.ibb.co/jDLZKZQ/blue-tshirt.png" class="d-block w-100" alt="Blue T-shirt" />
               <div class="overlay-text">Your Design Here</div>
             </div>
             <div class="carousel-item position-relative">
-              <img src="https://i.ibb.co/kM8L4pq/yellow-tshirt.png" class="d-block w-100" alt="Yellow T-shirt">
+              <img src="https://i.ibb.co/kM8L4pq/yellow-tshirt.png" class="d-block w-100" alt="Yellow T-shirt" />
               <div class="overlay-text">Your Design Here</div>
             </div>
             <div class="carousel-item position-relative">
-              <img src="https://i.ibb.co/ZGQH6F5/grey-tshirt.png" class="d-block w-100" alt="Grey T-shirt">
+              <img src="https://i.ibb.co/ZGQH6F5/grey-tshirt.png" class="d-block w-100" alt="Grey T-shirt" />
               <div class="overlay-text">Your Design Here</div>
             </div>
           </div>
+
+          <!-- Slide hint text -->
+          <div class="text-center text-gray-500 text-sm mt-2 md:hidden">
+            👉 Swipe to see next 
+          </div>
+
           <button class="carousel-control-prev" type="button" data-bs-target="#tshirtCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
           </button>
@@ -128,7 +145,7 @@
           </button>
         </div>
 
-        <!-- Tool Buttons -->
+        <!-- Tools -->
         <div class="flex flex-wrap gap-4 mt-6 tools justify-center">
           <button class="tool-btn"><i class="fa fa-upload text-lg mb-1"></i><span>Upload</span></button>
           <button class="tool-btn"><i class="fa fa-eraser text-lg mb-1"></i><span>BG Remove</span></button>
@@ -138,22 +155,22 @@
         </div>
       </div>
 
-      <!-- Right: Product Details -->
-      <div class="flex-1 md:ml-10 text-left md:text-left text-center md:text-start">
+      <!-- Right: Product Info -->
+      <div class="flex-1 text-center md:text-left">
         <h2 class="text-2xl font-bold mb-2">Unisex Cotton T-Shirt</h2>
         <p class="text-xl font-semibold mb-3 text-gray-700">$14.99</p>
         <p class="text-gray-600 mb-4">
-          Elevate your everyday look with our premium cotton unisex T-Shirt – a perfect blend of comfort and style.
+          Elevate your everyday look with our premium cotton unisex T-shirt – a perfect blend of comfort and style.
         </p>
 
         <!-- Color Selection -->
         <div class="mb-4">
           <h3 class="font-semibold mb-2">Colors</h3>
           <div class="flex justify-center md:justify-start gap-3">
-            <div class="color-circle" style="background-color: red;" data-bs-slide-to="0" data-bs-target="#tshirtCarousel"></div>
-            <div class="color-circle" style="background-color: blue;" data-bs-slide-to="1" data-bs-target="#tshirtCarousel"></div>
-            <div class="color-circle" style="background-color: yellow;" data-bs-slide-to="2" data-bs-target="#tshirtCarousel"></div>
-            <div class="color-circle" style="background-color: grey;" data-bs-slide-to="3" data-bs-target="#tshirtCarousel"></div>
+            <div class="color-circle" style="background-color: red;" data-bs-target="#tshirtCarousel" data-bs-slide-to="0"></div>
+            <div class="color-circle" style="background-color: blue;" data-bs-target="#tshirtCarousel" data-bs-slide-to="1"></div>
+            <div class="color-circle" style="background-color: yellow;" data-bs-target="#tshirtCarousel" data-bs-slide-to="2"></div>
+            <div class="color-circle" style="background-color: grey;" data-bs-target="#tshirtCarousel" data-bs-slide-to="3"></div>
           </div>
         </div>
 
@@ -169,18 +186,18 @@
         </div>
 
         <!-- Add to Cart Button -->
-        <button class="btn w-100 mt-3 btn-purple rounded-xl py-2">
+        <button class="btn btn-purple rounded-xl py-2 w-100 mt-3">
           Add to Cart
         </button>
       </div>
     </div>
 
-    <!-- Product Description Card -->
+    <!-- Description -->
     <div class="bg-white mt-8 p-5 rounded-xl shadow-md card-hover">
       <h3 class="text-lg font-semibold mb-2">Product Description</h3>
       <p class="text-gray-600 leading-relaxed">
-        Crafted from soft cotton fabric, this T-shirt delivers superior comfort and breathability. 
-        Ideal for everyday wear, its sleek and minimal design makes it suitable for every occasion.
+        Crafted from soft cotton fabric, this T-shirt offers superior comfort and breathability. 
+        Perfect for daily wear or gifting, its unisex design fits all styles with ease.
       </p>
     </div>
   </div>
